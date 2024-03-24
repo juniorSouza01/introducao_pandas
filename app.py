@@ -12,8 +12,8 @@ print(df)
 df.at[0, 'Vendedor'] = 'Gelado'
 
 # Inserindo dados:
-new_line = {'Dia':1, 'Vendedor':'Junior', 'Produto':'Carro', 'Unidades':80, 'Preço':20.00}
-df = df._append(pd.Series(new_line), ignore_index=True)
+new_row = pd.DataFrame({'Dia': [1],'Vendedor': ['Junior'],'Produto': ['Carro'],'Unidades': [8],'Preço': [20.00]}, columns=df.columns)
+df = pd.concat([df, new_row], ignore_index=True)
 
 # Visualizar os dados atualizados
 print("\nDados após editar e inserir:")
