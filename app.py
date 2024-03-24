@@ -12,7 +12,7 @@ print(df)
 df.at[0, 'Vendedor'] = 'Gelado'
 
 # Inserindo dados:
-new_row = pd.DataFrame({'Dia': [1],'Vendedor': ['Junior'],'Produto': ['Carro'],'Unidades': [8],'Preço': [20.00]}, columns=df.columns)
+new_row = pd.DataFrame({'Dia': [1],'Vendedor': ['Junior'],'Produto': ['Carro'],'Unidades': [8],'Preço': [20.00]}, columns=df.columns.str.strip())
 df = pd.concat([df, new_row], ignore_index=True)
 
 # Visualizar os dados atualizados
